@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenvaEngine", "ZenvaEngine.csproj", "{807FF8AD-AFD5-4A10-BB25-09764E89E0FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{807FF8AD-AFD5-4A10-BB25-09764E89E0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807FF8AD-AFD5-4A10-BB25-09764E89E0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807FF8AD-AFD5-4A10-BB25-09764E89E0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807FF8AD-AFD5-4A10-BB25-09764E89E0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8D92ECA-9733-45E7-A1A0-1E0679F01E25}
+	EndGlobalSection
+EndGlobal
