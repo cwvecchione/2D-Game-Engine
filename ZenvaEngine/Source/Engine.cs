@@ -54,11 +54,13 @@ namespace ZenvaEngine.Source
 
         void GameLoop()
         {
+            LoadObjects();
             OnLoad();
             while (app.IsOpen)
             {
                 app.DispatchEvents();
                 app.Clear(windowColor);
+                UpdateObjects();
                 OnUpdate();
                 app.Display();
             }
@@ -76,5 +78,56 @@ namespace ZenvaEngine.Source
                 Console.WriteLine("Key pressed");
             }
         }
-    }
+
+        public static List<GameObject> GameObjects = new List<GameObject>();
+        public static List<GameObject> GameObjectsToAdd = new List<GameObject>();
+        public static List<GameObject> GameObjectsToRemove = new List<GameObject>();
+
+        public static void RegisterGameObject(GameObject gameObject)
+        {
+            GameObjectsToAdd.Add(gameObject);
+        }
+        public static void UnRegisterGameObject(GameObject gameObject)
+        {
+            GameObjectsToRemove.Add(gameObject);
+        }
+
+        public void LoadObjects()
+        {
+            foreach (GameObject gameObject in GameObjects)
+            {
+                gameObject.OnLoad();
+            }
+        }
+
+        public void UpdateObjects()
+        {
+            if (GameObjects == null)
+            {
+                return;
+            }
+            for (int i = 0; i < GameObjects.Count; i++)
+            {
+                GameObjects[i].OnUpdate();
+                GameObjects[i].UpdateChildren();
+            }
+            if (GameObjectsToAdd.Count > 0)
+            {
+                for (int i = 0; i < GameObjectsToAdd.Count; i++)
+                {
+                    GameObjectsToAdd[i].OnLoad();
+                    GameObjects.Add(GameObjectsToAdd[i]);
+                }
+                GameObjectsToAdd.Clear();
+            }
+            if (GameObjectsToRemove.Count > 0)
+            {
+                for (int i = 0; GameObjectsToRemove.Count > i; i++)
+                {
+                    GameObjectsToRemove[i].OnDestroy();
+                    GameObjects.Remove(GameObjectsToRemove[i]);
+                }
+                GameObjectsToRemove.Clear();
+            }
+        }
 }
