@@ -25,8 +25,7 @@ namespace ZenvaEngine.Source
         public Color outLineColor = Color.White;
         public float OutLineThickness = 1.0f;
 
-        public Shape2D(SHAPES shape, Vector2 position, Vector2 scale, string tag, Color color
-, Color outlinecolor)
+        public Shape2D(SHAPES shape, Vector2 position, Vector2 scale, string tag, Color color, Color outlinecolor)
         {
             this.shape = shape;
             this.Position = position;
@@ -43,6 +42,39 @@ namespace ZenvaEngine.Source
             this.Scale = scale;
             this.Tag = tag;
             Log.Info($"SHAPE2D {tag} has been registerd!");
+        }
+        public override void OnDestroy()
+        {
+
+        }
+
+        public override void OnLoad()
+        {
+
+        }
+
+        public override void OnUpdate()
+        {
+            if (shape == SHAPES.RECTANGLE)
+            {
+                RectangleShape graphics = new RectangleShape(Scale);
+                graphics.Origin = Scale * new Vector2(0.5f, 0.5f);
+                graphics.Position = Position;
+                graphics.FillColor = color;
+                graphics.OutlineColor = outLineColor;
+                graphics.OutlineThickness = OutLineThickness;
+                Engine.app.Draw(graphics);
+            }
+            else
+            {
+                CircleShape graphics = new CircleShape(Scale.x);
+                graphics.Origin = Scale * new Vector2(0.5f, 0.5f);
+                graphics.Position = Position;
+                graphics.FillColor = color;
+                graphics.OutlineColor = outLineColor;
+                graphics.OutlineThickness = OutLineThickness;
+                Engine.app.Draw(graphics);
+            }
         }
     }
 }

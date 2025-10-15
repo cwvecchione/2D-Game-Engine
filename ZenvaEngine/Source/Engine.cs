@@ -102,6 +102,8 @@ namespace ZenvaEngine.Source
 
         public void UpdateObjects()
         {
+            Time.UpdateTime();
+
             if (GameObjects == null)
             {
                 return;

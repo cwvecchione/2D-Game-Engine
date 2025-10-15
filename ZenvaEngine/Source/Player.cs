@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SFML.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -22,16 +23,43 @@ namespace ZenvaEngine.Source
             this.Tag = tag;
         }
 
+        public override void OnLoad()
+        {
+            Sprite2D sprite = new Sprite2D("Assets/idle.png", new Vector2(), new Vector2(16, 16), new Vector2(4, 4), "Player's sprite");
+            AddChild(sprite);
+
+            AnimatedSprite2D animator = new AnimatedSprite2D(1f, new Vector2(4, 4), "Player graphics");
+            animator.FrameTime = 0.5f;
+            Animation2D run = new Animation2D("Assets/Run.png", new Vector2(16, 16), 4);
+            animator.AddAnimation("Run", run);
+            AddChild(animator);
+            Animation2D idle = new Animation2D("Assets/idle.png", new Vector2(16, 16), 1);
+            animator.AddAnimation("Idle", idle);
+        }
+
         public override void OnUpdate()
         {
             if (Input.ActionPressed("Right"))
             {
-                player.Position.x += 1;
+                Position.x += 1;
+                animator.FlipH = 1;
+                animator.Play("Run");
             }
-            if (Input.ActionPressed("Left"))
+            else if (Input.ActionPressed("Left"))
             {
-                player.Position.x -= 1;
+                Position.x -= 1;
+                animator.FlipH = -1;
+                animator.Play("Run");
             }
+            else
+            {
+                animator.Play("Idle");
+            }
+            currentAnimation.frameRectangle = new IntRect((int)(CurrentFrame * currentAnimation.FrameSize.x), 0, (int)currentAnimation.FrameSize.x, (int)currentAnimation.FrameSize.y);
+            currentAnimation.sprite.Position = Position;
+            currentAnimation.sprite.Scale = new Vector2(Scale.x * FlipH, Scale.y * FlipV);
+            currentAnimation.sprite.TextureRect = currentAnimation.frameRectangle;
+            Engine.app.Draw(currentAnimation.sprite);
         }
     }
 }
