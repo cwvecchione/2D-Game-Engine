@@ -1,4 +1,5 @@
-﻿using SFML.Graphics;
+﻿using nkast.Aether.Physics2D.Dynamics;
+using SFML.Graphics;
 using SFML.Window;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace ZenvaEngine.Source
         public Color windowColor = Color.Black;
         // Window Renderer
         public static RenderWindow app;
+        public static World world = new World();
 
         public Engine(uint WIDTH, uint HEIGHT, string TITLE, Color WINDOWCOLOR)
         {
@@ -34,14 +36,14 @@ namespace ZenvaEngine.Source
             app.Resized += App_Resized;
             app.SetFramerateLimit(144);
             GameLoop();
+            RenderWindow window = (RenderWindow)sender;
+            window.Close();
+            RenderWindow window = (RenderWindow)sender;
+            FloatRect visibleArea = new FloatRect(0, 0, e.Width, e.Height);
+            window.SetView(new View(visibleArea));
+            camera = app.GetView();
+            app.SetView(camera);
         }
-
-        RenderWindow window = (RenderWindow)sender;
-        window.Close();
-
-        RenderWindow window = (RenderWindow)sender;
-        FloatRect visibleArea = new FloatRect(0, 0, e.Width, e.Height);
-        window.SetView(new View(visibleArea));
 
         private void App_KeyReleased(object? sender, KeyEventArgs e)
         {
@@ -77,11 +79,15 @@ namespace ZenvaEngine.Source
             {
                 Console.WriteLine("Key pressed");
             }
+
+            LevelManager.UpdateLevel();
         }
 
         public static List<GameObject> GameObjects = new List<GameObject>();
         public static List<GameObject> GameObjectsToAdd = new List<GameObject>();
         public static List<GameObject> GameObjectsToRemove = new List<GameObject>();
+        public static View camera;
+        public static List<Camera> AllCameras = new List<Camera>();
 
         public static void RegisterGameObject(GameObject gameObject)
         {
@@ -103,6 +109,8 @@ namespace ZenvaEngine.Source
         public void UpdateObjects()
         {
             Time.UpdateTime();
+            world.Step(Time.deltaTime);
+            if (world.IsLocked) { return; }
 
             if (GameObjects == null)
             {
@@ -132,4 +140,5 @@ namespace ZenvaEngine.Source
                 GameObjectsToRemove.Clear();
             }
         }
+    }
 }

@@ -35,6 +35,9 @@ namespace ZenvaEngine.Source
             AddChild(animator);
             Animation2D idle = new Animation2D("Assets/idle.png", new Vector2(16, 16), 1);
             animator.AddAnimation("Idle", idle);
+
+            cam = new Camera(true, "Player's Cam");
+            AddChild(cam);
         }
 
         public override void OnUpdate()
