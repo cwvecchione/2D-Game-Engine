@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace ZenvaEngine.Source
+
+namespace CW2DEngine.Source
 {
     internal class Camera : GameObject
     {
@@ -13,29 +14,34 @@ namespace ZenvaEngine.Source
         public override Vector2 Scale { get; set; }
         public override string Tag { get; set; }
         public override List<GameObject> Children { get; set; }
+
         View view = Engine.camera;
         bool Current = false;
 
-        public Camera(string tag)
+        public Camera(string tag) 
         {
-            this.Position = new Vector2(Engine.camera.Center.X, Engine.camera.Center.Y);
-            this.Scale = new Vector2(Engine.camera.Size.X, Engine.camera.Size.Y);
-            this.Tag = tag;
+            Position = new Vector2(Engine.camera.Center.X, Engine.camera.Center.Y);
+            Scale = new Vector2(Engine.camera.Size.X, Engine.camera.Size.Y);
+            Tag = tag;
+
             Engine.AllCameras.Add(this);
         }
+
         public Camera(bool current, string tag)
         {
-            this.Position = new Vector2(Engine.camera.Center.X, Engine.camera.Center.Y);
-            this.Scale = new Vector2(Engine.camera.Size.X, Engine.camera.Size.Y);
-            this.Tag = tag;
-            this.Current = current;
+            Position = new Vector2(Engine.camera.Center.X, Engine.camera.Center.Y);
+            Scale = new Vector2(Engine.camera.Size.X, Engine.camera.Size.Y);
+            Tag = tag;
+            Current = current;
+
             if (Current)
             {
-                foreach (Camera cam in Engine.AllCameras)
+                foreach(Camera cam in Engine.AllCameras)
                 {
                     if (cam.Current) { cam.Current = false; }
                 }
             }
+
             Engine.AllCameras.Add(this);
         }
 
@@ -44,13 +50,19 @@ namespace ZenvaEngine.Source
             foreach (Camera cam in Engine.AllCameras)
             {
                 if (cam.Current) { cam.Current = false; }
+
+                Current = true;
             }
-            this.Current = true;
         }
 
         public override void OnDestroy()
         {
             Engine.AllCameras.Remove(this);
+        }
+
+        public override void OnLoad()
+        {
+            
         }
 
         public override void OnUpdate()

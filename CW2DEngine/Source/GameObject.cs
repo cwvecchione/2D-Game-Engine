@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZenvaEngine.Source
+namespace CW2DEngine.Source
 {
     internal abstract class GameObject
     {
@@ -28,37 +28,16 @@ namespace ZenvaEngine.Source
         {
             Children.Add(child);
         }
+
         public virtual void DestroyChild(GameObject child)
         {
-            if (Children.Contains(child)) Children.Remove(child);
-            child.DestroySelf();
+            if(Children.Contains(child)) Children.Remove(child);
+            child.DestorySelf();
         }
-
-        public virtual void UpdateChildren()
-        {
-            foreach (GameObject child in Children)
-            {
-                child.Position = Position + child.Origin;
-            }
-        }
-
-        public virtual void DestorySelf()
-        {
-            Engine.UnRegisterGameObject(this);
-            if (Children == null) { return; }
-            foreach (GameObject child in Children)
-            {
-                child.DestorySelf();
-            }
-        }
-
-        abstract public void OnLoad();
-        abstract public void OnUpdate();
-        abstract public void OnDestroy();
 
         public virtual GameObject GetChild(string childTag)
         {
-            foreach (GameObject child in Children)
+            foreach(GameObject child in Children)
             {
                 if (childTag.Equals(child.Tag))
                 {
@@ -68,5 +47,31 @@ namespace ZenvaEngine.Source
             Log.Error($"GameObject {childTag} Does not exist!");
             return null;
         }
+
+        public virtual void DestorySelf()
+        {
+            Engine.UnRegisterGameObject(this);
+
+            if (Children == null) { return; }
+            foreach (GameObject child in Children)
+            {
+                child.DestorySelf();
+            }
+        }
+
+        public virtual void UpdateChildren()
+        {
+            foreach(GameObject child in Children)
+            {
+                child.Position = Position + child.Origin;
+            }
+        }
+
+        abstract public void OnLoad();
+        abstract public void OnUpdate();
+        abstract public void OnDestroy();
+
+
+
     }
 }

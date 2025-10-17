@@ -1,13 +1,11 @@
 ﻿using SFML.Window;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SFML.Window.Keyboard;
 
-namespace ZenvaEngine.Source
+namespace CW2DEngine.Source
 {
     static internal class Input
     {
@@ -50,28 +48,31 @@ namespace ZenvaEngine.Source
             return false;
         }
 
+
         public static void GetKeyUp(KeyEventArgs e)
         {
-            foreach (InputAction action in AllInputActions.Values)
+            foreach(InputAction action in AllInputActions.Values)
             {
-                if (action.Key == e.Code || (action.SecKey != Keyboard.Key.Unknown && action.SecKey == e.Code))
+                if(action.Key == e.Code || action.SecKey != Keyboard.Key.Unknown && action.SecKey == e.Code)
                 {
                     action.Pressing = false;
                     action.Pressed = false;
                 }
             }
+
         }
 
         public static void GetKeyDown(KeyEventArgs e)
         {
             foreach (InputAction action in AllInputActions.Values)
             {
-                if (action.Key == e.Code || (action.SecKey != Keyboard.Key.Unknown && action.SecKey == e.Code))
+                if (action.Key == e.Code || action.SecKey != Keyboard.Key.Unknown && action.SecKey == e.Code)
                 {
                     action.Pressing = true;
                 }
             }
-        }
-    }
 
+        }
+
+    }
 }

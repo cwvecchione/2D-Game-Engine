@@ -1,4 +1,4 @@
-﻿namespace ZenvaEngine
+﻿namespace CW2DEngine
 {
     static class Program
     {
