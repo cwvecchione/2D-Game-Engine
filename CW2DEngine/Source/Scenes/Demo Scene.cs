@@ -7,8 +7,10 @@ using nkast.Aether.Physics2D.Dynamics.Contacts;
 using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using CW2DEngine.Source;
+using CW2DEngine.Source.Classes;
+using CW2DEngine.Source.GameObjects;
 
-namespace CW2DEngine
+namespace CW2DEngine.Source.Scenes
 {
     internal class Demo_Scene : Level
     {
@@ -54,7 +56,7 @@ namespace CW2DEngine
         private bool Collision_OnCollision(Fixture sender, Fixture other, Contact contact)
         {
             score++;
-            if(score > 3) { LevelManager.ChangeLevel("Win"); }
+            if (score > 3) { LevelManager.ChangeLevel("Win"); }
 
             return true;
         }

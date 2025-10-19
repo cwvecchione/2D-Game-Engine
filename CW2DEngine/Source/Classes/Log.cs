@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     public class Log
     {
-        public static void Normal(string message) 
+        public static void Normal(string message)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(message);

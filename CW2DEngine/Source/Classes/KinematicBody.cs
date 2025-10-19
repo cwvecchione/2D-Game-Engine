@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class KinematicBody : GameObject
     {
@@ -52,12 +52,12 @@ namespace CW2DEngine.Source
             onCollisionEventHandlers.Add(Body_OnCollision);
             onSeparationEventHandlers.Add(Body_OnSeparation);
 
-            foreach(OnCollisionEventHandler handler in onCollisionEventHandlers)
+            foreach (OnCollisionEventHandler handler in onCollisionEventHandlers)
             {
                 body.OnCollision += handler;
             }
 
-            foreach(OnSeparationEventHandler handler in onSeparationEventHandlers)
+            foreach (OnSeparationEventHandler handler in onSeparationEventHandlers)
             {
                 body.OnSeparation += handler;
             }
@@ -66,7 +66,7 @@ namespace CW2DEngine.Source
 
         public void Move()
         {
-            if(body != null)
+            if (body != null)
             {
                 body.LinearVelocity = velocity;
             }

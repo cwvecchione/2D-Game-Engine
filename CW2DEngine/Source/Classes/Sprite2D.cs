@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class Sprite2D : GameObject
     {
@@ -29,7 +29,8 @@ namespace CW2DEngine.Source
             try
             {
                 Texture = new Texture(texturePath);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Log.Error($"Sprite2D Texture was not found, Error: {ex}");
             }
@@ -40,12 +41,12 @@ namespace CW2DEngine.Source
 
         public override void OnDestroy()
         {
-            
+
         }
 
         public override void OnLoad()
         {
-            
+
         }
 
         public override void OnUpdate()

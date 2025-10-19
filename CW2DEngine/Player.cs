@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CW2DEngine.Source;
+using CW2DEngine.Source.Classes;
 using SFML.Graphics;
 
 namespace CW2DEngine

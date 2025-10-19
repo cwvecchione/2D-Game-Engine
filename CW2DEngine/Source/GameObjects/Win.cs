@@ -7,8 +7,9 @@ using nkast.Aether.Physics2D.Dynamics.Contacts;
 using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using CW2DEngine.Source;
+using CW2DEngine.Source.Classes;
 
-namespace CW2DEngine
+namespace CW2DEngine.Source.GameObjects
 {
     internal class Win : Level
     {
@@ -36,7 +37,7 @@ namespace CW2DEngine
 
         public override void OnUpdate()
         {
-            
+
         }
     }
 }

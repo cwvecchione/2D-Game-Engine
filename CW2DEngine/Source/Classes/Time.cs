@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class Time
     {

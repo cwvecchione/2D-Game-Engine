@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class Shape2D : GameObject
     {
@@ -53,17 +53,17 @@ namespace CW2DEngine.Source
 
         public override void OnDestroy()
         {
-            
+
         }
 
         public override void OnLoad()
         {
-            
+
         }
 
         public override void OnUpdate()
         {
-            if(shape == SHAPES.RECTANGLE)
+            if (shape == SHAPES.RECTANGLE)
             {
                 RectangleShape graphics = new RectangleShape(Scale);
                 graphics.Origin = Scale * new Vector2(0.5f, 0.5f);
@@ -84,7 +84,7 @@ namespace CW2DEngine.Source
                 Engine.app.Draw(graphics);
             }
 
-            
+
         }
     }
 }

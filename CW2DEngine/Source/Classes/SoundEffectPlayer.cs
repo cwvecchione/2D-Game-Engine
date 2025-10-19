@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class SoundEffectPlayer
     {
@@ -30,7 +30,7 @@ namespace CW2DEngine.Source
 
         public void Play(string sfxName)
         {
-            if(!AllSounds.ContainsKey(sfxName)) { return; }
+            if (!AllSounds.ContainsKey(sfxName)) { return; }
             AllSounds[sfxName].SoundPlayer.Volume = Volume;
             AllSounds[sfxName].SoundPlayer.Play();
         }

@@ -1,4 +1,4 @@
-﻿using CW2DEngine.Source;
+﻿using CW2DEngine.Source.Classes;
 using nkast.Aether.Physics2D.Dynamics;
 using nkast.Aether.Physics2D.Dynamics.Contacts;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine
+namespace CW2DEngine.Source.GameObjects
 {
     internal class Point : StaticBody
     {

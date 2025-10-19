@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class LevelManager
     {
@@ -22,7 +22,7 @@ namespace CW2DEngine.Source
                     InitLevel();
                     return;
                 }
-                
+
             }
 
             Log.Error($"Level {levelName} Does not exist!");
@@ -42,7 +42,7 @@ namespace CW2DEngine.Source
 
         public static void UpdateLevel()
         {
-            if(currentLevel == null) { return; }
+            if (currentLevel == null) { return; }
             currentLevel.OnUpdate();
         }
     }

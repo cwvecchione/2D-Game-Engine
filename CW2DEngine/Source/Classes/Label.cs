@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class Label : GameObject
     {
@@ -23,7 +23,7 @@ namespace CW2DEngine.Source
         public bool centered;
         public Color color = Color.White;
 
-        public Label(string text, string fontPath, uint fontSize, Vector2 Position, Color color, string tag, bool centered) 
+        public Label(string text, string fontPath, uint fontSize, Vector2 Position, Color color, string tag, bool centered)
         {
             Text = text;
             this.fontPath = fontPath;
@@ -33,7 +33,7 @@ namespace CW2DEngine.Source
             Tag = tag;
             this.centered = centered;
 
-            if(File.Exists(fontPath))
+            if (File.Exists(fontPath))
             {
                 font = new Font(fontPath);
             }
@@ -57,18 +57,18 @@ namespace CW2DEngine.Source
 
         public override void OnDestroy()
         {
-            
+
         }
 
         public override void OnLoad()
         {
-            
+
         }
 
         public override void OnUpdate()
         {
             Text text = new Text(Text, font, fontSize);
-            if(centered)
+            if (centered)
             {
                 FloatRect textRect = text.GetLocalBounds();
                 text.Origin = new Vector2(textRect.Left + textRect.Width * 0.5f, textRect.Top + textRect.Height * 0.5f);

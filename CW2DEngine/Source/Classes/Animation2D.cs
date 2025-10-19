@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class Animation2D
     {
@@ -26,7 +26,8 @@ namespace CW2DEngine.Source
             try
             {
                 texture = new Texture(spriteSheetPath);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Log.Error($"SpriteSheet Was not found!, Error: {ex}");
             }

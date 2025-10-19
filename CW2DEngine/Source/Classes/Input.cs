@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     static internal class Input
     {
@@ -51,9 +51,9 @@ namespace CW2DEngine.Source
 
         public static void GetKeyUp(KeyEventArgs e)
         {
-            foreach(InputAction action in AllInputActions.Values)
+            foreach (InputAction action in AllInputActions.Values)
             {
-                if(action.Key == e.Code || action.SecKey != Keyboard.Key.Unknown && action.SecKey == e.Code)
+                if (action.Key == e.Code || action.SecKey != Keyboard.Key.Unknown && action.SecKey == e.Code)
                 {
                     action.Pressing = false;
                     action.Pressed = false;

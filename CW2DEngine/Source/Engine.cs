@@ -1,4 +1,5 @@
-﻿using nkast.Aether.Physics2D.Dynamics;
+﻿using CW2DEngine.Source.Classes;
+using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Time = CW2DEngine.Source.Classes.Time;
 
 namespace CW2DEngine.Source
 {
@@ -17,7 +19,7 @@ namespace CW2DEngine.Source
         public uint width = 500;
 
         //window title
-        public string title = "Zenva Engine 0.0.1";
+        public string title = "CW 2D  Engine 0.0.1";
 
         //Window color
         public Color windowColor = Color.Black;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class SoundEffect
     {
@@ -19,7 +19,8 @@ namespace CW2DEngine.Source
             try
             {
                 Buffer = new SoundBuffer(filePath);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Log.Error($"Sound File {Tag} was not found, Error {ex}");
                 return;

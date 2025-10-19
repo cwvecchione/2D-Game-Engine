@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class Camera : GameObject
     {
@@ -18,7 +18,7 @@ namespace CW2DEngine.Source
         View view = Engine.camera;
         bool Current = false;
 
-        public Camera(string tag) 
+        public Camera(string tag)
         {
             Position = new Vector2(Engine.camera.Center.X, Engine.camera.Center.Y);
             Scale = new Vector2(Engine.camera.Size.X, Engine.camera.Size.Y);
@@ -36,7 +36,7 @@ namespace CW2DEngine.Source
 
             if (Current)
             {
-                foreach(Camera cam in Engine.AllCameras)
+                foreach (Camera cam in Engine.AllCameras)
                 {
                     if (cam.Current) { cam.Current = false; }
                 }
@@ -62,7 +62,7 @@ namespace CW2DEngine.Source
 
         public override void OnLoad()
         {
-            
+
         }
 
         public override void OnUpdate()

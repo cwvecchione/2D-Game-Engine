@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SFML.Graphics;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class AnimatedSprite2D : GameObject
     {
@@ -40,7 +40,7 @@ namespace CW2DEngine.Source
         public void Play(string animationName)
         {
             if (animationName.Equals(currentAnimationName)) { return; }
-            if(AllAnimations.ContainsKey(animationName))
+            if (AllAnimations.ContainsKey(animationName))
             {
                 currentAnimation = AllAnimations[animationName];
                 currentAnimationName = animationName;
@@ -75,23 +75,23 @@ namespace CW2DEngine.Source
 
         public override void OnDestroy()
         {
-            
+
         }
 
         public override void OnLoad()
         {
-            
+
         }
 
         public override void OnUpdate()
         {
-            if(currentAnimation == null) { return; }
+            if (currentAnimation == null) { return; }
 
             elapsedTime += Time.deltaTime;
 
             //Log.Normal($"Current Frame {CurrentFrame}");
 
-            if(elapsedTime >= FrameTime && currentAnimation.TotalFrames != 1)
+            if (elapsedTime >= FrameTime && currentAnimation.TotalFrames != 1)
             {
                 CurrentFrame = CurrentFrame == currentAnimation.TotalFrames - 1 ? 0 : CurrentFrame + 1;
                 elapsedTime = 0f;

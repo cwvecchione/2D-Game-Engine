@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source
+namespace CW2DEngine.Source.Classes
 {
     internal class Vector2
     {
@@ -30,7 +30,7 @@ namespace CW2DEngine.Source
 
         public Vector2 Normalize()
         {
-            if(x == 0 && y == 0) return this;
+            if (x == 0 && y == 0) return this;
 
             float num = (float)Math.Sqrt(x * x + y * y);
             float num1 = 1f / num;
