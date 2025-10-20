@@ -1,11 +1,12 @@
-﻿using SFML.Graphics;
+﻿using CW2DEngine.Source.Classes;
+using SFML.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source.Classes
+namespace CW2DEngine.Source.Classes.GameObjects
 {
     internal class Label : GameObject
     {

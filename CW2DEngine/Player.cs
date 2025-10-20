@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CW2DEngine.Source;
 using CW2DEngine.Source.Classes;
+using CW2DEngine.Source.Classes.Effects;
+using CW2DEngine.Source.Classes.GameObjects;
 using SFML.Graphics;
 
 namespace CW2DEngine

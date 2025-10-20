@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CW2DEngine.Source.Classes.Effects;
 
 namespace CW2DEngine.Source.Classes
 {

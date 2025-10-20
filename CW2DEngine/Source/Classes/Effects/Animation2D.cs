@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source.Classes
+namespace CW2DEngine.Source.Classes.Effects
 {
     internal class Animation2D
     {

@@ -8,7 +8,8 @@ using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using CW2DEngine.Source;
 using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.GameObjects;
+using CW2DEngine.Source.Objects;
+using CW2DEngine.Source.Classes.GameObjects;
 
 namespace CW2DEngine.Source.Scenes
 {

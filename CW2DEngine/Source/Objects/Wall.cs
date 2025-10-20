@@ -1,11 +1,12 @@
 ﻿using CW2DEngine.Source.Classes;
+using CW2DEngine.Source.Classes.GameObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source.GameObjects
+namespace CW2DEngine.Source.Objects
 {
     internal class Wall : StaticBody
     {

@@ -1,4 +1,5 @@
 ﻿using CW2DEngine.Source.Classes;
+using CW2DEngine.Source.Classes.GameObjects;
 using nkast.Aether.Physics2D.Dynamics;
 using nkast.Aether.Physics2D.Dynamics.Contacts;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source.GameObjects
+namespace CW2DEngine.Source.Objects
 {
     internal class Point : StaticBody
     {
@@ -27,7 +28,7 @@ namespace CW2DEngine.Source.GameObjects
             onCollisionEventHandlers.Add(Collision_OnCollision);
 
             soundEffectPlayer = new SoundEffectPlayer(100);
-            soundEffectPlayer.AddSFX(new SoundEffect("Assets/sfx.ogg", "point"));
+            soundEffectPlayer.AddSFX(new Classes.Effects.SoundEffect("Assets/sfx.ogg", "point"));
 
 
             base.OnLoad();
