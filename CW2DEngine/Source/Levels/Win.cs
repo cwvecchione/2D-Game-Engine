@@ -7,10 +7,10 @@ using nkast.Aether.Physics2D.Dynamics.Contacts;
 using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Classes.GameObjects;
-using CW2DEngine.Source.Objects;
+using CW2DEngine.Source.Classes.GameObjectClasses;
+using CW2DEngine.Source.GameObjects;
 
-namespace CW2DEngine.Source.Scenes
+namespace CW2DEngine.Source.Levels
 {
     internal class Win : Level
     {

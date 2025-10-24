@@ -1,5 +1,5 @@
 ﻿using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Classes.GameObjects;
+using CW2DEngine.Source.Classes.GameObjectClasses;
 using nkast.Aether.Physics2D.Dynamics;
 using nkast.Aether.Physics2D.Dynamics.Contacts;
 using System;
@@ -7,8 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Graphics;
 
-namespace CW2DEngine.Source.Objects
+namespace CW2DEngine.Source.GameObjects
 {
     internal class Point : StaticBody
     {
@@ -24,7 +25,7 @@ namespace CW2DEngine.Source.Objects
 
         public override void OnLoad()
         {
-            AddChild(new Shape2D(Shape2D.SHAPES.RECTANGLE, Position, Scale, Tag));
+            AddChild(new Shape2D(Shape2D.SHAPES.RECTANGLE, Position, Scale, Tag, Color.Green, Color.Green));
             onCollisionEventHandlers.Add(Collision_OnCollision);
 
             soundEffectPlayer = new SoundEffectPlayer(100);

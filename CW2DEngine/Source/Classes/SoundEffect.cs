@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW2DEngine.Source.Classes.Effects
+namespace CW2DEngine.Source.Classes
 {
     internal class SoundEffect
     {

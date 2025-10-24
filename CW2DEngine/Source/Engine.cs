@@ -1,5 +1,5 @@
 ﻿using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Classes.GameObjects;
+using CW2DEngine.Source.Classes.GameObjectClasses;
 using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using SFML.System;

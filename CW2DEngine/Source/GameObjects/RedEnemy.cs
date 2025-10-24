@@ -1,12 +1,13 @@
 ﻿using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Classes.GameObjects;
+using CW2DEngine.Source.Classes.GameObjectClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Graphics;
 
-namespace CW2DEngine.Source.Objects
+namespace CW2DEngine.Source.GameObjects
 {
     internal class Wall : StaticBody
     {
@@ -19,7 +20,7 @@ namespace CW2DEngine.Source.Objects
 
         public override void OnLoad()
         {
-            AddChild(new Shape2D(Shape2D.SHAPES.RECTANGLE, new Vector2(), Scale, Tag));
+            AddChild(new Shape2D(Shape2D.SHAPES.RECTANGLE, new Vector2(), Scale, Tag, Color.Green, Color.Green));
 
 
             base.OnLoad();

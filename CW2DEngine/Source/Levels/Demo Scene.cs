@@ -9,7 +9,7 @@ using SFML.Graphics;
 using CW2DEngine.Source;
 using CW2DEngine.Source.Classes;
 using CW2DEngine.Source.Objects;
-using CW2DEngine.Source.Classes.GameObjects;
+using CW2DEngine.Source.Classes.GameObjectClasses;
 
 namespace CW2DEngine.Source.Scenes
 {
