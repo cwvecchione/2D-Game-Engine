@@ -8,7 +8,7 @@ using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using CW2DEngine.Source;
 using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Objects;
+using CW2DEngine.Source.GameObjects;
 using CW2DEngine.Source.Classes.GameObjectClasses;
 
 namespace CW2DEngine.Source.Scenes
@@ -19,8 +19,11 @@ namespace CW2DEngine.Source.Scenes
         public override bool Init { get; set; }
 
         Player player;
+        RedEnemy red1;
+
         int score = 0;
         Label scoreLabel;
+        
         //Point point;
         Point point1, point2, point3, point4;
 
@@ -33,6 +36,8 @@ namespace CW2DEngine.Source.Scenes
         public override void OnLoad()
         {
             player = new Player(new Vector2(400, 400), new Vector2(50, 50), "player");
+            red1 = new RedEnemy(new Vector2(400, 400), new Vector2(50, 50), "red1");
+
             Wall wall1 = new Wall(new Vector2(400, 0), new Vector2(800, 20), "wall");
             Wall wall2 = new Wall(new Vector2(400, 800), new Vector2(800, 20), "wall");
             Wall wall3 = new Wall(new Vector2(0, 400), new Vector2(20, 800), "wall");

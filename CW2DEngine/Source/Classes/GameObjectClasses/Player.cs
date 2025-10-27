@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using CW2DEngine.Source;
 using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Classes.Effects;
-using CW2DEngine.Source.Classes.GameObjects;
 using SFML.Graphics;
 
-namespace CW2DEngine
+namespace CW2DEngine.Source.Classes.GameObjectClasses
 {
     internal class Player : KinematicBody
     {
@@ -61,7 +59,7 @@ namespace CW2DEngine
 
         void HandleAnimations()
         {
-            if(velocity.x == 0 && velocity.y == 0)
+            if (velocity.x == 0 && velocity.y == 0)
             {
                 animator.Play("Idle");
             }
@@ -70,11 +68,11 @@ namespace CW2DEngine
                 animator.Play("Run");
             }
 
-            if(velocity.x > 0 && !LookingRight)
+            if (velocity.x > 0 && !LookingRight)
             {
                 flip();
             }
-            if(velocity.x < 0 && LookingRight)
+            if (velocity.x < 0 && LookingRight)
             {
                 flip();
             }

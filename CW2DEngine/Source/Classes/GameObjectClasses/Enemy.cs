@@ -10,7 +10,7 @@ using SFML.Graphics;
 
 namespace CW2DEngine
 {
-    internal class Player : KinematicBody
+    internal class Enemy : KinematicBody
     {
         public override Vector2 Position { get; set; }
         public override Vector2 Origin { get; set; }
@@ -24,7 +24,7 @@ namespace CW2DEngine
 
         bool LookingRight = true;
 
-        public Player(Vector2 position, Vector2 scale, string tag) : base(position, scale, tag)
+        public Enemy(Vector2 position, Vector2 scale, string tag) : base(position, scale, tag)
         {
             Position = position;
             Scale = scale;
@@ -39,17 +39,12 @@ namespace CW2DEngine
             animator.AddAnimation("Run", run);
             animator.AddAnimation("Idle", idle);
             AddChild(animator);
-            cam = new Camera(true, "player camera");
-            AddChild(cam);
 
             base.OnLoad();
         }
 
         public override void OnUpdate()
         {
-            velocity.x = Convert.ToInt32(Input.ActionPressed("Right")) - Convert.ToInt32(Input.ActionPressed("Left"));
-            velocity.y = Convert.ToInt32(Input.ActionPressed("Down")) - Convert.ToInt32(Input.ActionPressed("Up"));
-
             velocity = velocity.Normalize() * new Vector2(speed, speed);
 
             Move();

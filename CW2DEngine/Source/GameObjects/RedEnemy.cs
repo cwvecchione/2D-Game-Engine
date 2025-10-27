@@ -9,9 +9,9 @@ using SFML.Graphics;
 
 namespace CW2DEngine.Source.GameObjects
 {
-    internal class Wall : StaticBody
+    internal class RedEnemy : Enemy
     {
-        public Wall(Vector2 position, Vector2 scale, string tag) : base(position, scale, tag)
+        public RedEnemy(Vector2 position, Vector2 scale, string tag) : base(position, scale, tag)
         {
             Position = position;
             Scale = scale;
