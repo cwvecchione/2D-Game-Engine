@@ -10,6 +10,19 @@ using SFML.Graphics;
 
 namespace CW2DEngine
 {
+    public class Enemy
+    {
+        public string Name { get; set; }
+        public int HP { get; set; }
+        public int MaxHP { get; set; }
+        public int Attack { get; set; }
+        public List<string> Abilities { get; set; }
+        public int GoldDrop { get; set; }
+        public string ImageName { get; set; }
+    }
+
+    //Try reading in a statblock as a parameter??
+
     internal class Enemy : KinematicBody
     {
         public override Vector2 Position { get; set; }

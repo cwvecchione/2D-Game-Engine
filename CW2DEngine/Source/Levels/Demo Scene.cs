@@ -36,7 +36,10 @@ namespace CW2DEngine.Source.Scenes
         public override void OnLoad()
         {
             player = new Player(new Vector2(400, 400), new Vector2(50, 50), "player");
-            red1 = new RedEnemy(new Vector2(400, 400), new Vector2(50, 50), "red1");
+            red1 = new RedEnemy(new Vector2(100, 100), new Vector2(50, 50), "red1");
+
+            new Enemy { Name = "Red Bandit", MaxHP = 30, HP = 30, Attack = 8, Abilities = new List<string> { "Slash" }, GoldDrop = 10, ImageName = "goblin.png" },
+            new Enemy { Name = "Yellow Bandit", MaxHP = 50, HP = 50, Attack = 12, Abilities = new List<string> { "Smash" }, GoldDrop = 20, ImageName = "orc.png" }
 
             Wall wall1 = new Wall(new Vector2(400, 0), new Vector2(800, 20), "wall");
             Wall wall2 = new Wall(new Vector2(400, 800), new Vector2(800, 20), "wall");
