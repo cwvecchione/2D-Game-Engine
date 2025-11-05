@@ -18,9 +18,16 @@ namespace CW2DEngine
         public override string Tag { get; set; }
         public override List<GameObject> Children { get; set; }
 
+        public string Name { get; set; }
+        public int HP { get; set; }
+        public int MaxHP { get; set; }
+        public int Attack { get; set; }
+        public string RunImage { get; set; }
+        public string IdleImage { get; set; }
+        public int Speed { get; set; }
+
+
         AnimatedSprite2D animator;
-        Camera cam;
-        int speed = 200;
 
         bool LookingRight = true;
 
@@ -33,7 +40,7 @@ namespace CW2DEngine
 
         public override void OnLoad()
         {
-            animator = new AnimatedSprite2D(1f, new Vector2(4, 4), "Player graphics");
+            animator = new AnimatedSprite2D(1f, new Vector2(4, 4), "Enemy graphics");
             Animation2D run = new Animation2D("Assets/Run.png", new Vector2(16, 16), 4);
             Animation2D idle = new Animation2D("Assets/idle.png", new Vector2(16, 16), 1);
             animator.AddAnimation("Run", run);

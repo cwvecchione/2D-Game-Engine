@@ -20,10 +20,17 @@ namespace CW2DEngine.Source.GameObjects
 
         public override void OnLoad()
         {
-            AddChild(new Shape2D(Shape2D.SHAPES.RECTANGLE, new Vector2(), Scale, Tag, Color.Green, Color.Green));
-
+            animator = new AnimatedSprite2D(1f, new Vector2(4, 4), "Enemy graphics");
+            Animation2D run = new Animation2D("Assets/RedEnemyRun.png", new Vector2(16, 16), 4);
+            Animation2D idle = new Animation2D("Assets/RedEnenyIdle.png", new Vector2(16, 16), 1);
+            string RunImage = "RedEnemyRun"
+            string IdleImage = "RedEnemyIdle"
+            AddChild(animator);
+            int Speed = 50
+            int GoldDrop = 100
 
             base.OnLoad();
         }
+
     }
 }
