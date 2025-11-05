@@ -10,7 +10,7 @@ using SFML.Graphics;
 
 namespace CW2DEngine
 {
-    internal class Player : KinematicBody
+    internal class Enemy : KinematicBody
     {
         public override Vector2 Position { get; set; }
         public override Vector2 Origin { get; set; }
@@ -18,13 +18,20 @@ namespace CW2DEngine
         public override string Tag { get; set; }
         public override List<GameObject> Children { get; set; }
 
+        public string Name { get; set; }
+        public int HP { get; set; }
+        public int MaxHP { get; set; }
+        public int Attack { get; set; }
+        public string RunImage { get; set; }
+        public string IdleImage { get; set; }
+        public int Speed { get; set; }
+
+
         AnimatedSprite2D animator;
-        Camera cam;
-        int speed = 200;
 
         bool LookingRight = true;
 
-        public Player(Vector2 position, Vector2 scale, string tag) : base(position, scale, tag)
+        public Enemy(Vector2 position, Vector2 scale, string tag) : base(position, scale, tag)
         {
             Position = position;
             Scale = scale;
@@ -33,23 +40,18 @@ namespace CW2DEngine
 
         public override void OnLoad()
         {
-            animator = new AnimatedSprite2D(1f, new Vector2(4, 4), "Player graphics");
+            animator = new AnimatedSprite2D(1f, new Vector2(4, 4), "Enemy graphics");
             Animation2D run = new Animation2D("Assets/Run.png", new Vector2(16, 16), 4);
             Animation2D idle = new Animation2D("Assets/idle.png", new Vector2(16, 16), 1);
             animator.AddAnimation("Run", run);
             animator.AddAnimation("Idle", idle);
             AddChild(animator);
-            cam = new Camera(true, "player camera");
-            AddChild(cam);
 
             base.OnLoad();
         }
 
         public override void OnUpdate()
         {
-            velocity.x = Convert.ToInt32(Input.ActionPressed("Right")) - Convert.ToInt32(Input.ActionPressed("Left"));
-            velocity.y = Convert.ToInt32(Input.ActionPressed("Down")) - Convert.ToInt32(Input.ActionPressed("Up"));
-
             velocity = velocity.Normalize() * new Vector2(speed, speed);
 
             Move();

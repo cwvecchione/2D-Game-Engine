@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using CW2DEngine.Source;
 using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Classes.Effects;
-using CW2DEngine.Source.Classes.GameObjects;
 using SFML.Graphics;
 
-namespace CW2DEngine
+namespace CW2DEngine.Source.Classes.GameObjectClasses
 {
     internal class Player : KinematicBody
     {
@@ -24,6 +22,21 @@ namespace CW2DEngine
         int speed = 200;
 
         bool LookingRight = true;
+
+        public int Level { get; set; } = 1;
+        public int XP { get; set; } = 0;
+        public int HP { get; set; } = 100;
+        public int MaxHP { get; set; } = 100;
+        public int Strength { get; set; } = 10;
+        public int Agility { get; set; } = 10;
+        public int Defense { get; set; } = 10;
+        public int Magic { get; set; } = 10;
+        public int Gold { get; set; } = 50;
+        public Dictionary<string, int> Inventory { get; set; } = new Dictionary<string, int> { { "Potion", 2 }, { "Sword", 1 } };
+        public List<string> Equipment { get; set; } = new List<string>();
+        public List<string> Abilities { get; set; } = new List<string> { "Fireball", "Heal" };
+
+
 
         public Player(Vector2 position, Vector2 scale, string tag) : base(position, scale, tag)
         {
@@ -61,7 +74,7 @@ namespace CW2DEngine
 
         void HandleAnimations()
         {
-            if(velocity.x == 0 && velocity.y == 0)
+            if (velocity.x == 0 && velocity.y == 0)
             {
                 animator.Play("Idle");
             }
@@ -70,11 +83,11 @@ namespace CW2DEngine
                 animator.Play("Run");
             }
 
-            if(velocity.x > 0 && !LookingRight)
+            if (velocity.x > 0 && !LookingRight)
             {
                 flip();
             }
-            if(velocity.x < 0 && LookingRight)
+            if (velocity.x < 0 && LookingRight)
             {
                 flip();
             }
