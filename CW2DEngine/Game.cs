@@ -11,7 +11,7 @@ namespace CW2DEngine
 {
     internal class Game : Engine
     {
-        public Game() : base(800, 800, "Engine Test", Color.Black) { }
+        public Game() : base(800, 800, "RPG Engine Test", Color.Black) { }
 
         
 
