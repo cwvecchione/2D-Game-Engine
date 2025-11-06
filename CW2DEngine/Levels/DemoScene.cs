@@ -7,7 +7,6 @@ using nkast.Aether.Physics2D.Dynamics.Contacts;
 using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using CW2DEngine.Source;
-using CW2DEngine.RPG;
 using CW2DEngine.GameObjects;
 
 namespace CW2DEngine.Levels
@@ -35,8 +34,8 @@ namespace CW2DEngine.Levels
         public override void OnLoad()
         {
             player = new Player(new Vector2(400, 400), new Vector2(50, 50), "player");
-            red = new Enemy(new Vector2(100, 100), new Vector2(50, 50), "red", 50, new StatBlock("Red Bandit", 10, 10, 5, 0, ["sword"]), "Assets/RedEnemyRun.png", "");
-            yellow = new Enemy(new Vector2(150, 150), new Vector2(50, 50), "red", 50, new StatBlock("Yellow Bandit", 10, 10, 20, 10, ["warhammer"]), "Assets/YellowEnemyRun.png", "");
+            red = new Enemy(new Vector2(100, 100), new Vector2(50, 50), "red", 50, "Assets/RedEnemyRun.png", "");
+            yellow = new Enemy(new Vector2(150, 150), new Vector2(50, 50), "red", 50, "Assets/YellowEnemyRun.png", "");
 
             wall1 = new Wall(new Vector2(400, 0), new Vector2(800, 20), "wall");
             wall2 = new Wall(new Vector2(400, 800), new Vector2(800, 20), "wall");
