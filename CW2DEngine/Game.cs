@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CW2DEngine.Levels;
 using CW2DEngine.Source;
-using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Levels;
 using SFML.Graphics;
 
 namespace CW2DEngine
@@ -18,7 +17,7 @@ namespace CW2DEngine
 
         public override void OnLoad()
         {
-            Demo_Scene level1 = new Demo_Scene("level1");
+            DemoScene level1 = new DemoScene("level1");
             Win level2 = new Win("Win");
             LevelManager.ChangeLevel("level1");
             

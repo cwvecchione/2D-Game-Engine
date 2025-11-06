@@ -1,6 +1,4 @@
-﻿using CW2DEngine.Source.Classes;
-using CW2DEngine.Source.Classes.GameObjectClasses;
-using nkast.Aether.Physics2D.Dynamics;
+﻿using nkast.Aether.Physics2D.Dynamics;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -9,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Time = CW2DEngine.Source.Classes.Time;
+using Time = CW2DEngine.Source.Time;
 
 namespace CW2DEngine.Source
 {
