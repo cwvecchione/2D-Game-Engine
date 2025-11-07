@@ -1,7 +1,5 @@
 ﻿using CW2DEngine.GameObjects;
-using CW2DEngine.RPG;
 using CW2DEngine.Source;
-using CW2DEngine.Source.Classes;
 using nkast.Aether.Physics2D.Dynamics;
 using nkast.Aether.Physics2D.Dynamics.Contacts;
 using SFML.Graphics;
@@ -29,7 +27,7 @@ namespace CW2DEngine.Levels
 
         public override void OnLoad()
         {
-            red = new Enemy(new Vector2(400, 400), new Vector2(50, 50), "red", 50, new StatBlock("Red Bandit", 10, 10, 5, 0, ["sword"]), "Assets/RedEnemyRun.png", "");
+            red = new Enemy(new Vector2(400, 400), new Vector2(50, 50), "red", 50, "Assets/RedEnemyRun.png", "");
             Wall wall1 = new Wall(new Vector2(400, 0), new Vector2(800, 20), "wall");
             Wall wall2 = new Wall(new Vector2(400, 800), new Vector2(800, 20), "wall");
             Wall wall3 = new Wall(new Vector2(0, 400), new Vector2(20, 800), "wall");
