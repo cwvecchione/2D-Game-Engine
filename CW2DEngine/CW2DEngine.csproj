@@ -5,6 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>C:\Projects_DEV\C# Projects\Builds</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
